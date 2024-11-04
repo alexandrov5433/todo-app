@@ -1,0 +1,47 @@
+/* app-editing */
+
+.editing-form {
+    padding: 1em;
+}
+
+.editing-form .form-group {
+    padding-bottom: 1em;
+}
+
+.editing-form .titles {
+    display: block;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.editing-form input[type="button"] {
+    margin-top: 1em;
+}
+
+.editing-form textarea {
+    padding: 0.5em 0.5em;
+    font-family: inherit;
+    font-size: 110%;
+    width: 40vw;
+    height: 20vh;
+    max-width: 60vw;
+    max-height: 30vh;
+    background-color: rgba(89, 112, 131, 0.5);
+    color: azure;
+    border-color: rgb(255, 94, 0);
+    border-radius: 0.3em;
+}
+
+.editing-form input[type="datetime-local"] {
+    padding: 0 2em;
+    width: 12vw;
+    height: 5vh;
+    background-color: rgba(89, 112, 131, 0.5);
+    color: azure;
+    border-color: rgb(255, 94, 0);
+    border-radius: 0.3em;
+}
+
+.editing-form .cancel {
+    margin-left: 2em;
+}

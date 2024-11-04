@@ -1,0 +1,13 @@
+<li class="item">
+    <div class="details">
+        <div class="deadline-container">
+            <label>Deadline:</label>
+            <p>{{item.deadline}}</p>
+        </div>
+        <p>{{item.task}}</p>
+    </div>
+    <div class="actions">
+        <input type="button" value="Edit" data-id="{{item.id}}">
+        <input type="button" value="Delete" class="delete" data-id="{{item.id}}">
+    </div>
+</li>

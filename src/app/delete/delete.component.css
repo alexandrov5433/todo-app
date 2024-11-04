@@ -1,0 +1,25 @@
+/* app-delete */
+
+.delete-container {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-container p {
+    padding-bottom: 1.5em;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.delete-container .cancel {
+    margin-left: 2em;
+}
+
+.delete-container .delete {
+    background-color: rgb(131, 39, 39);
+}
+.delete-container .delete:active {
+    background-color: rgb(255, 0, 0);
+}

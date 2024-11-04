@@ -1,0 +1,15 @@
+<div class="home-container">
+    <div class="item-container">
+        @if (items != undefined) {
+            <ul>
+                @for ( i of items; track items) {
+                    <app-item [item]="i">
+                    </app-item>
+                }
+            </ul>
+        } @else {
+            <p>No tasks open! :3</p>
+        }
+    </div>
+    <input type="button" value="Add New Task">
+</div>

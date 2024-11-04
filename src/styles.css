@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    font: normal 16px Arial, Helvetica, sans-serif;
+    background-color: rgb(24, 15, 61);
+}
+
+input[type="button"] {
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    background-color: rgb(39, 90, 131);
+    color: rgb(194, 243, 0);
+    font-weight: bolder;
+    font-size: large;
+}
+
+input[type="button"]:active {
+    background-color: rgb(194, 243, 0);
+    color: rgb(24, 15, 61);
+}

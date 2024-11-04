@@ -1,0 +1,55 @@
+/* app-item */
+
+.item {
+    border-radius: 8px;
+    margin-bottom: 1em;
+    padding: 0.4em 0;
+}
+
+.item:nth-child(odd) {
+    
+    background-color: rgba(39, 90, 131, 0.5);
+}
+.item:nth-child(even) {
+    
+    background-color: rgba(89, 112, 131, 0.5);
+}
+
+.item, .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details {
+    margin-left: 1em;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.deadline-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.5em;
+    font-size: 95%;
+    font-weight: bold;
+    color: rgba(255, 94, 0);
+}
+
+.deadline-container label {
+    padding-right: 1em;
+    text-transform: uppercase;
+}
+
+input {
+    margin-right: 1em;
+}
+
+input.delete {
+    background-color: rgb(131, 39, 39);
+}
+input.delete:active {
+    background-color: rgb(255, 0, 0);
+}
