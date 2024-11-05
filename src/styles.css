@@ -11,7 +11,7 @@ body {
     background-color: rgb(24, 15, 61);
 }
 
-input[type="button"] {
+input[type="button"], input[type="submit"] {
     padding: 0.5em 1em;
     border-radius: 8px;
     background-color: rgb(39, 90, 131);
@@ -20,7 +20,7 @@ input[type="button"] {
     font-size: large;
 }
 
-input[type="button"]:active {
+input[type="button"]:active, input[type="submit"]:active {
     background-color: rgb(194, 243, 0);
     color: rgb(24, 15, 61);
 }

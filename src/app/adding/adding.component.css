@@ -14,7 +14,7 @@
     text-transform: uppercase;
 }
 
-.adding-form input[type="button"] {
+.adding-form input[type="button"], .adding-form input[type="submit"] {
     margin-top: 1em;
 }
 

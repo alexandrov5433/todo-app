@@ -2,7 +2,7 @@
     <div class="item-container">
         @if (items != undefined) {
             <ul>
-                @for ( i of items; track items) {
+                @for ( i of items; track i.id) {
                     <app-item [item]="i">
                     </app-item>
                 }
@@ -11,5 +11,5 @@
             <p>No tasks open! :3</p>
         }
     </div>
-    <input type="button" value="Add New Task">
+    <input type="button" value="Add New Task" (click)="goToAddNewTask()">
 </div>

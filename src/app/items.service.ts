@@ -32,15 +32,37 @@ export class ItemService {
             deadline: '23423412341234'
         }
     ];
-    // itemsList: Item[] = [];
+    private getData = (): Item[] => {
+        return this.itemsList;
+    }
 
-    constructor() {};
+    private saveData = (data: Item[]): void => {
+        this.itemsList = data;
+        return;
+    }
+
+    private genUId = (): string => {
+        return new Date().getTime().toString();
+    }
+
+    constructor() { };
 
     getAllItems(): Item[] | undefined {
         return this.itemsList.length === 0 ? undefined : this.itemsList;
     }
 
     getItemById(id: string): Item | undefined {
-        return this.itemsList.find( el => el.id === id);
+        return this.itemsList.find(el => el.id === id);
+    }
+
+    addNewItem(description: string, deadline: string): void {
+        console.log(description, deadline);
+        const data = this.getData();
+        data.push({
+            id: this.genUId(),
+            task: description,
+            deadline: deadline
+        });
+        return this.saveData(data);
     }
 }

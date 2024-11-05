@@ -1,14 +1,14 @@
 <div class="adding-container">
-    <form class="adding-form">
+    <form class="adding-form" [formGroup]="taskForm" (submit)="addNewTask()">
         <div class="form-group">
             <label class="titles">Task:</label>
-            <textarea></textarea>
+            <textarea formControlName="description"></textarea>
         </div>
         <div class="form-group">
             <label class="titles">Deadline:</label>
-            <input type="datetime-local">
+            <input type="datetime-local" formControlName="deadline">
         </div>
-        <input type="button" value="Add Task">
-        <input type="button" value="Cancel" class="cancel">
+        <input type="submit" value="Add Task">
+        <input type="button" value="Cancel" class="cancel" (click)="canselTaskAdding()">
     </form>
 </div>
