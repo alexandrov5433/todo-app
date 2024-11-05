@@ -56,7 +56,6 @@ export class ItemService {
     }
 
     addNewItem(description: string, deadline: string): void {
-        console.log(description, deadline);
         const data = this.getData();
         data.push({
             id: this.genUId(),
@@ -64,5 +63,14 @@ export class ItemService {
             deadline: deadline
         });
         return this.saveData(data);
+    }
+
+    editTask(id: string, task: string, deadline: string): void {
+        const data = this.getData();
+        const entry = data.find(el => el.id === id);
+        if (entry) {
+            Object.assign(entry, { task, deadline });
+            this.saveData(data);
+        }
     }
 }

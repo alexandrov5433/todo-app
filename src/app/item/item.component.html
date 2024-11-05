@@ -7,7 +7,7 @@
         <p>{{item.task}}</p>
     </div>
     <div class="actions">
-        <input type="button" value="Edit" data-id="{{item.id}}">
-        <input type="button" value="Delete" class="delete" data-id="{{item.id}}">
+        <input type="button" value="Edit" routerLink="/edit/{{item.id}}">
+        <input type="button" value="Delete" class="delete" routerLink="/delete/{{item.id}}">
     </div>
 </li>
