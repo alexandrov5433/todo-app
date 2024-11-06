@@ -35,8 +35,8 @@
 .adding-form input[type="text"] {
     font-family: inherit;
     font-size: 110%;
-    padding: 0 2em;
-    width: 12vw;
+    padding: 0 1%;
+    width: 40%;
     height: 5vh;
     background-color: rgba(89, 112, 131, 0.5);
     color: azure;
