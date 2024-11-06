@@ -32,7 +32,9 @@
     border-radius: 0.3em;
 }
 
-.adding-form input[type="datetime-local"] {
+.adding-form input[type="text"] {
+    font-family: inherit;
+    font-size: 110%;
     padding: 0 2em;
     width: 12vw;
     height: 5vh;

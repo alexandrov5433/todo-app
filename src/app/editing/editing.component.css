@@ -32,8 +32,10 @@
     border-radius: 0.3em;
 }
 
-.editing-form input[type="datetime-local"] {
-    padding: 0 2em;
+.editing-form input[type="text"] {
+    font-family: inherit;
+    font-size: 110%;
+    padding: 0 1%;
     width: 12vw;
     height: 5vh;
     background-color: rgba(89, 112, 131, 0.5);

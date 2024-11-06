@@ -2,11 +2,11 @@
     <form class="editing-form" [formGroup]="editForm" (submit)="editTask()">
         <div class="form-group">
             <label class="titles">Edit Task:</label>
-            <textarea formControlName="task">{{item?.task}}</textarea>
+            <textarea formControlName="task"></textarea>
         </div>
         <div class="form-group">
             <label class="titles">New Deadline:</label>
-            <input type="datetime-local" formControlName="deadline">
+            <input type="text" formControlName="deadline">
         </div>
         <input type="submit" value="Edit Task">
         <input type="button" value="Cancel" class="cancel" (click)="cancelEditing()">

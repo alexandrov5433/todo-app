@@ -15,15 +15,15 @@ export class EditingComponent {
     router: Router = new Router();
     route: ActivatedRoute = inject(ActivatedRoute);
     itemService: ItemService = inject(ItemService);
-    item: Item | undefined;
     id: string;
-    editForm = new FormGroup({
-        task: new FormControl(''),
-        deadline: new FormControl('')
-    });
+    editForm: FormGroup;
     constructor() {
         this.id = this.route.snapshot.paramMap.get('id') ?? '';
-        this.item = this.itemService.getItemById(this.id);
+        const item: Item | undefined = this.itemService.getItemById(this.id);
+        this.editForm = new FormGroup({
+            task: new FormControl(item?.task),
+            deadline: new FormControl(item?.deadline)
+        });
     }
 
     editTask() {
