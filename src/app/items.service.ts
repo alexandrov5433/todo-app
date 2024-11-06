@@ -54,7 +54,6 @@ export class ItemService {
     }
 
     deleteTaskById(id: string): void {
-        console.log('Before deletion', this.getData());
         const newTaskList = this.getData().reduce((acc: any, cur: Item) => {
             if (cur.id !== id) {
                 acc.push(cur);
@@ -62,7 +61,6 @@ export class ItemService {
             }
             return acc;
         }, []);
-        console.log('After deletion', newTaskList);
         this.saveData(newTaskList);
     }
 }
