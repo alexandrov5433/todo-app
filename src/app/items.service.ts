@@ -5,39 +5,45 @@ import { Item } from "./item";
     providedIn: 'root'
 })
 export class ItemService {
-    itemsList: Item[] = [
-        {
-            id: "1",
-            task: "Some text here.",
-            deadline: '23423412341234'
-        },
-        {
-            id: "2",
-            task: "Some text here. sdfsdfsd ggfsd",
-            deadline: '23423412341234'
-        },
-        {
-            id: "3",
-            task: "Some text here. dgsdgfdsgfdsfgdsfgd",
-            deadline: '23423412341234'
-        },
-        {
-            id: "4",
-            task: "Some text here. gsdfgsdfgdsfgdgfsdgdsfgsdfgsdgffgdsdbsdbdbsdbsd",
-            deadline: '23423412341234'
-        },
-        {
-            id: "5",
-            task: "Some text here. sbfbsd",
-            deadline: '23423412341234'
-        }
-    ];
+    // itemsList: Item[] = [
+    //     {
+    //         id: "1",
+    //         task: "Some text here.",
+    //         deadline: '23423412341234'
+    //     },
+    //     {
+    //         id: "2",
+    //         task: "Some text here. sdfsdfsd ggfsd",
+    //         deadline: '23423412341234'
+    //     },
+    //     {
+    //         id: "3",
+    //         task: "Some text here. dgsdgfdsgfdsfgdsfgd",
+    //         deadline: '23423412341234'
+    //     },
+    //     {
+    //         id: "4",
+    //         task: "Some text here. gsdfgsdfgdsfgdgfsdgdsfgsdfgsdgffgdsdbsdbdbsdbsd",
+    //         deadline: '23423412341234'
+    //     },
+    //     {
+    //         id: "5",
+    //         task: "Some text here. sbfbsd",
+    //         deadline: '23423412341234'
+    //     },
+    //     {
+    //         id: "6",
+    //         task: "Test delete function.",
+    //         deadline: "12.11.2234 / 13:34"
+    //     }
+    // ];
+
     private getData = (): Item[] => {
-        return this.itemsList;
+        return JSON.parse(window.localStorage.getItem('itemsList') ?? '[]');;
     }
 
     private saveData = (data: Item[]): void => {
-        this.itemsList = data;
+        window.localStorage.setItem('itemsList', JSON.stringify(data));
         return;
     }
 
@@ -45,14 +51,20 @@ export class ItemService {
         return new Date().getTime().toString();
     }
 
-    constructor() { };
+    constructor() {
+        const itemList = window.localStorage.getItem('itemsList') ?? false;
+        if (!itemList) {
+            window.localStorage.setItem('itemsList', JSON.stringify([]));
+        }
+    };
 
     getAllItems(): Item[] | undefined {
-        return this.itemsList.length === 0 ? undefined : this.itemsList;
+        const itemsList = this.getData();
+        return itemsList.length === 0 ? undefined : itemsList;
     }
 
     getItemById(id: string): Item | undefined {
-        return this.itemsList.find(el => el.id === id);
+        return this.getData().find(el => el.id === id);
     }
 
     addNewItem(description: string, deadline: string): void {
@@ -72,5 +84,18 @@ export class ItemService {
             Object.assign(entry, { task, deadline });
             this.saveData(data);
         }
+    }
+
+    deleteTaskById(id: string): void {
+        console.log('Before deletion', this.getData());
+        const newTaskList = this.getData().reduce((acc: any, cur: Item) => {
+            if (cur.id !== id) {
+                acc.push(cur);
+                return acc;
+            }
+            return acc;
+        }, []);
+        console.log('After deletion', newTaskList);
+        this.saveData(newTaskList);
     }
 }
